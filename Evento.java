@@ -7,5 +7,8 @@ public class Evento{
         this.fecha = fecha;
         this.descripcion = descripcion;
     }
-   
+    @Override 
+    public String toString() {
+        return "Fecha: " + fecha + ", Descripcion: " + descripcion;
+    }
 }

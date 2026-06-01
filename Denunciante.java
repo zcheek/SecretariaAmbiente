@@ -43,4 +43,17 @@ public abstract class Denunciante{
         return this.historialCanjes;
     }
     
+    public void asignarCanje(Canje c){ // Punto 6
+        this.historialCanjes.add(c);
+    }
+    
+    public void canjearRecompensa(Recompensa r){ // Punto 6
+        if (this.puntajeTotal >= r.getPuntosRequeridos()) {
+            Canje nuevoCanje = new Canje(r);
+            this.asignarCanje(nuevoCanje);
+            this.puntajeTotal -= r.getPuntosRequeridos();
+        } else {
+            System.out.println("No tenes puntos suficientes");
+        }
+    }
 }

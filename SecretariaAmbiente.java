@@ -5,8 +5,9 @@ public class SecretariaAmbiente{
 	private String ubicacion;
 	private String descripcion;
 	private int Denunciantes;
-	private int denuncias;
+	private int Denuncias;
     private ArrayList<Denunciante> denunciantes = new ArrayList<>();
+    private ArrayList<Denuncia> denun = new ArrayList<>();
 
 	public SecretariaAmbiente(String nombre, String ubicacion, String descripcion){
 		this.nombre = nombre;
@@ -17,9 +18,33 @@ public class SecretariaAmbiente{
 	public void cargarDenunciante(Denunciante d){
         this.denunciantes.add(d);
     }
+    public void cargarDenuncia(Denuncia d){
+        this.denun.add(d);
+    }
 
-    public void imprimirDenunciantes(){
-        System.out.println(denunciantes);
-        System.out.println();
+    public ArrayList<Denunciante> getDenunciantes(){
+        return this.denunciantes;
+    }
+
+    public ArrayList<Denuncia> getDenuncias() {
+        return this.denun;
+    }
+
+    public int getCantDenuncias(){// Punto 9
+        Denuncias = 0;
+        for (Denuncia denuncia : denun){
+            Denuncias++;
+        }
+        return Denuncias;
+    }
+
+    public int getCantDenunciantes(){// Punto 10
+        Denunciantes = 0;
+        for (Denunciante denunciante : denunciantes){
+            Denunciantes++;
+        }
+        return Denunciantes;
     }
 }
+
+    

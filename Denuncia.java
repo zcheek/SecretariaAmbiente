@@ -22,7 +22,7 @@ public class Denuncia{
         this.denunciantes = new ArrayList<>();
     }
 
-    public void agregarDenunciante(Denunciante d){
+    public void cargarDenunciante(Denunciante d){
         this.denunciantes.add(d);
         d.agregarDenuncia(this);
         d.sumarPuntos(categoria.getPuntosBase());
@@ -40,7 +40,7 @@ public class Denuncia{
     public int getNumeroExpediente(){
         return this.numeroExpediente;
     }
-
+    
     public ArrayList<Evento> getEventos(){
         return this.eventos;
     }
@@ -54,8 +54,8 @@ public class Denuncia{
             d.sumarPuntos(10); 
         }
     }
-    
-    public void cargarEvento(Evento e){
-        this.evento.add(e);
+    @Override
+    public String toString() {
+        return "Expediente: " + numeroExpediente + ", Fecha Ingreso: " + fechaIngreso + ", Descripcion: " + descripcion + ", Ubicacion: " + ubicacion + ", Estado: " + estado + ", Categoria: " + categoria.getNombre();
     }
 }
