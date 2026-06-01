@@ -16,11 +16,11 @@ public class TestSecretariaAmbiente {
 		secramb.cargarDenunciante(d4); // Punto 3 P2
 		secramb.cargarDenunciante(d5); // Punto 3 P2
         
-		Denuncia denunciaUno = new Denuncia(00001, "", "Av. Franciso de Viedma",  "Contaminacion Hídrica"); // Punto 4 A P2
-		Denuncia denunciaDos = new Denuncia(00002, "", "Calle Buenos Aires 912", "Contaminación Atmosférica"); // Punto 4 A P2
-		Denuncia denunciaTres = new Denuncia(00003, "", "Calle Belgrano 236", "Contaminación Atmosférica"); // Punto 4 A P2
-		Denuncia denunciaCuatro = new Denuncia(00004, "", "Plaza San Martin", "Residuos Peligrosos"); // Punto 4 A P2
-		Denuncia denunciaCinco = new Denuncia(00005, "", "Centro Cultural de Viedma", "Contaminación Sonora"); // Punto 4 A P2
+		Denuncia denunciaUno = new Denuncia(00001, " ", "Av. Franciso de Viedma",  "Contaminacion Hídrica"); // Punto 4 A P2
+		Denuncia denunciaDos = new Denuncia(00002, " ", "Calle Buenos Aires 912", "Contaminación Atmosférica"); // Punto 4 A P2
+		Denuncia denunciaTres = new Denuncia(00003, " ", "Calle Belgrano 236", "Contaminación Atmosférica"); // Punto 4 A P2
+		Denuncia denunciaCuatro = new Denuncia(00004, " ", "Plaza San Martin", "Residuos Peligrosos"); // Punto 4 A P2
+		Denuncia denunciaCinco = new Denuncia(00005, " ", "Centro Cultural de Viedma", "Contaminación Sonora"); // Punto 4 A P2
         
         denunciaUno.cargarDenunciante(d1); // Punto 4 B P2 
 		denunciaDos.cargarDenunciante(d1); // Punto 4 B P2
@@ -37,6 +37,24 @@ public class TestSecretariaAmbiente {
 		denunciaCuatro.cargarDenunciante(d5); // Punto 4 B P2
 		denunciaCinco.cargarDenunciante(d5); // Punto 4 B P2
 
-		
+		Evento e1 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e2 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e3 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e4 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e5 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e6 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e7 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e8 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e9 = new Evento(Locate.now(), " "); // Punto 5
+		Evento e10 = new Evento(Locate.now(), " "); // Punto 5
+
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
+		denunciaUno.cargarEvento(e1);		
     }
 }

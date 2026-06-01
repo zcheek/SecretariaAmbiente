@@ -28,12 +28,14 @@ El proyecto está estructurado con clases estándar de Java, sin dependencias ex
 
 1. Clonar este repositorio:
    ```bash
-   git clone [https://github.com/zcheek/SecretariaAmbiente.git](https://github.com/zcheek/SecretariaAmbiente.git)
-   Navegar a la carpeta del proyecto y compilar los archivos:
+   git clone https://github.com/zcheek/SecretariaAmbiente.git
+
+2. Navegar a la carpeta del proyecto y compilar los archivos:
 
 Bash
 javac *.java
-Ejecutar la clase principal de pruebas:
+
+3. Ejecutar la clase principal de pruebas:
 
 Bash
 java TestSecretariaAmbiente

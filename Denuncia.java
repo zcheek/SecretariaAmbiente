@@ -55,4 +55,7 @@ public class Denuncia{
         }
     }
     
+    public void cargarEvento(Evento e){
+        this.evento.add(e);
+    }
 }
