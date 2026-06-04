@@ -2,14 +2,14 @@ import java.util.ArrayList;
 
 public class SecretariaAmbiente{
 	private String nombre;
-	private String ubicacion;
+	private Ubicacion ubicacion;
 	private String descripcion;
 	private int Denunciantes;
 	private int Denuncias;
     private ArrayList<Denunciante> denunciantes = new ArrayList<>();
     private ArrayList<Denuncia> denun = new ArrayList<>();
 
-	public SecretariaAmbiente(String nombre, String ubicacion, String descripcion){
+	public SecretariaAmbiente(String nombre, Ubicacion ubicacion, String descripcion){
 		this.nombre = nombre;
 		this.ubicacion = ubicacion;
 		this.descripcion = descripcion;
