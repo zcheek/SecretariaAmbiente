@@ -2,7 +2,7 @@ public abstract class Inspector {
     private int matricula; 
     private String nombre; 
     private String apellido; 
-    private int aniosExp; 
+    private int aniosExp;
 
     public Inspector(int matricula, String nombre, String apellido, int aniosExp) {
         this.matricula = matricula;

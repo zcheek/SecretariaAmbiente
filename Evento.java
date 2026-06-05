@@ -1,21 +1,22 @@
-import java.time.LocalDate;
+
 public class Evento{
-    private LocalDate fecha;
+    private String fecha; // cambiar en uml
     private String descripcion;
     private Inspector inspectorInterviniente;
 
-    // el de aca es pa eventos si ninspector, el otro es para eventos con inspector.
-    public Evento(LocalDate fecha, String descripcion){
-        this.fecha = fecha;
+    // el de aca es pa eventos sin inspector, el otro es para eventos con inspector.
+    public Evento(String fecha, String descripcion){
+        this.fecha = fecha; 
         this.descripcion = descripcion;
         this.inspectorInterviniente = null;
     }
-    // NUEVO: Constructor para eventos CON inspector en orto
-    public Evento(LocalDate fecha, String descripcion, Inspector inspector) {
+    //  Constructor para eventos CON inspector 
+    public Evento(String fecha, String descripcion, Inspector inspector) {
         this.fecha = fecha;
         this.descripcion = descripcion;
         this.inspectorInterviniente = inspector;
     }
+
     // aca le mando un getter para que me devuelva el inspector interviniente, si es que lo tiene, sino devuelve null.
     public Inspector getInspector() {
         return this.inspectorInterviniente;

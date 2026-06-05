@@ -3,7 +3,7 @@ public class InspectorDeLaboratorio extends Inspector {
     private String especialidad;
     private String nombreLaboratorio;
 
-    public InspectorDeLaboratorio (String especialidad, String nombreLaboratorio, int matricula, String nombre, String apellido, int aniosExp){
+    public InspectorDeLaboratorio (int matricula, String nombre, String apellido, int aniosExp, String especialidad, String nombreLaboratorio){
         super (matricula, nombre, apellido, aniosExp);
         this.especialidad = especialidad;
         this.nombreLaboratorio = nombreLaboratorio;
@@ -18,12 +18,12 @@ public class InspectorDeLaboratorio extends Inspector {
     }
 
     @Override
-    public int calcularCostoIntervencion(){
+    public int calcularCostoIntervencion(){ // Punto 5 P3
         return 200000;
     }
 
     @Override
-    public String generarInforme(Denuncia denuncia) {
+    public String generarInforme(Denuncia denuncia) {  // Punto 4 P3
         return "Informe de laboratorio - Inspector:" + getNombre() + ". Laboratorio:" + getNombreLaboratorio()
          + ". Especialidad:" + getEspecialidad() + ". Análisis de muestras correspondientes a denuncia en:" + denuncia.getUbicacion() + ". Resultados pendientes de validacion.";
     }

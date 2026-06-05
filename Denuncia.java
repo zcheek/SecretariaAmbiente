@@ -5,13 +5,13 @@ public class Denuncia{
     private int numeroExpediente;
     private LocalDate fechaIngreso;
     private String descripcion;
-    private String ubicacion;
+    private Ubicacion ubicacion;
     private String estado;
     private Categoria categoria;
     private ArrayList<Evento> eventos;
     private ArrayList<Denunciante> denunciantes;
 
-    public Denuncia(int numeroExpediente, String descripcion, String ubicacion, Categoria categoria){
+    public Denuncia(int numeroExpediente, String descripcion, Ubicacion ubicacion, Categoria categoria){
         this.numeroExpediente = numeroExpediente;
         this.fechaIngreso = LocalDate.now();
         this.descripcion = descripcion;
@@ -27,13 +27,12 @@ public class Denuncia{
         d.agregarDenuncia(this);
         d.sumarPuntos(categoria.getPuntosBase());
     }
-    
-    public void registrarEvento(String Evento){
-        Evento nuevoEvento = new Evento(LocalDate.now(), Evento);
-        this.eventos.add(nuevoEvento);
+
+    public void registrarEvento(Evento evento){
+        this.eventos.add(evento);
     }
 
-    public void setEstado(String estado){
+    public void setEstado(String estado){ 
         this.estado = estado;
     }
 
@@ -45,17 +44,27 @@ public class Denuncia{
         return this.eventos;
     }
 
+    public Ubicacion getUbicacion(){
+        return this.ubicacion;
+    }
+
     public void resolverFavorablemente() {
         this.estado = "CERRADA_ACEPTADA";
-        this.registrarEvento("Denuncia resuelta favorablemente");
+        System.out.println("Denuncia resuelta favorablemente");
         
-        // recorro la lsita y le doy 10 puntos a cada denunciante.
         for (Denunciante d : denunciantes) {
             d.sumarPuntos(10); 
         }
     }
+    // ///////////////////// NUEVO: Método para registrar evento con inspector
+    public void registrarEventoConInspector(String descripcion, Inspector inspector){
+        Evento nuevoEvento = new Evento("04/06/2026", descripcion, inspector);
+        this.eventos.add(nuevoEvento);
+    }
+
+
     @Override
     public String toString() {
-        return "Expediente: " + numeroExpediente + ", Fecha Ingreso: " + fechaIngreso + ", Descripcion: " + descripcion + ", Ubicacion: " + ubicacion + ", Estado: " + estado + ", Categoria: " + categoria.getNombre();
+        return "Expediente: " + numeroExpediente + ", Fecha Ingreso: " + fechaIngreso + ", Descripcion: " + descripcion + ", Ubicacion: " + this.ubicacion.getZona() + ", Estado: " + estado + ", Categoria: " + categoria.getNombre();
     }
 }

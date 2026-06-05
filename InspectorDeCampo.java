@@ -9,25 +9,24 @@ public class InspectorDeCampo extends Inspector {
     }
 
     @Override
-    public String generarInforme(Denuncia denuncia) {
+    public String generarInforme(Denuncia denuncia) { // Punto 4 P3
         String VehiculoUsado;
         if (this.Vehiculo != null) {
-            VehiculoUsado = this.vehiculo;
+            VehiculoUsado = this.Vehiculo;
         } else {
             VehiculoUsado = "Ninguno";
         }
 
-        return "Informe de Campo - Inspector: " + getNombre() + " " + getApellido() + ". Sitio relevado: " + denuncia.ubicacion + ". Zona de cobertura: " + zonaCobertura + ". Vehiculo utilizado: " + VehiculoUsado + ".";
+        return "Informe de Campo - Inspector: " + getNombre() + " " + getApellido() + ". Sitio relevado: " + denuncia.getUbicacion().getZona() + ". Zona de cobertura: " + zonaCobertura + ". Vehiculo utilizado: " + VehiculoUsado + ".";
 
 
     }
     @Override 
-    public int calcularCostoIntervencion() {
+    public int calcularCostoIntervencion() {  // Punto 5 P3
         int costoBase = 100000 + (getAniosExp() * 15);
         if (this.Vehiculo != null) {
-            costoBase = costoBase + (costoBase * 0.10); // aumento del 10% si se uso un vehiculo.
+            costoBase = costoBase + (int)(costoBase * 0.10); // aumento del 10% si se uso un vehiculo.
         } 
-        return costoBase;
+        return (int) costoBase;
     }
-    
 }
