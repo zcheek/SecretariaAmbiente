@@ -53,12 +53,22 @@ public class SecretariaAmbiente{
 
     public void listarInspectoresYCostos(){
         for (Inspector inspector : inspectores){
+            // averiguo el tipo de inspector con instanceof
+            String tipo = "";
+            if (inspector instanceof InspectorDeCampo) {
+                tipo = "Inspector de Campo";
+            } else if (inspector instanceof InspectorDeLaboratorio) {
+                tipo = "Inspector de Laboratorio";
+            } else if (inspector instanceof InspectorJuridico) {
+                tipo = "Inspector Jurídico";
+            }
             System.out.println("Inspector: " + inspector.getNombre());
+            System.out.println("Tipo: " + tipo);
             System.out.println("Costo de Intervencion: $" + inspector.calcularCostoIntervencion());
         }
     }
     public void compararInformes(Denuncia denuncia, Inspector insp1, Inspector insp2) {
-        System.out.println("\n COMPARACION DE INFORMES (Expediente " + denuncia.getNumeroExpediente() + ") ");
+        System.out.println("\nCOMPARACION DE INFORMES (Expediente " + denuncia.getNumeroExpediente() + ") ");
         System.out.println(insp1.generarInforme(denuncia));
         System.out.println(insp2.generarInforme(denuncia));
     }
