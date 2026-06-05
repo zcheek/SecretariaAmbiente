@@ -2,10 +2,19 @@ public class InspectorDeCampo extends Inspector {
     private String zonaCobertura; 
     private String Vehiculo; // esta es opcional
 
-    public InspectorDeCampo(int matricula, String nombre, String apellido, int aniosExp, String zonaCobertura, String vehiculo) {
+
+   // Constructor 1: Para cuando el inspector SI usa vehículo (ya que es opcional)
+    public InspectorDeCampo(int matricula, String nombre, String apellido, int aniosExp, String zonaCobertura, String Vehiculo) {
         super(matricula, nombre, apellido, aniosExp);
         this.zonaCobertura = zonaCobertura;
-        this.Vehiculo = vehiculo;
+        this.Vehiculo = Vehiculo;
+    }
+
+    // Constructor 2: Para cuando el inspector NO usa vehículo (es opcional)
+    public InspectorDeCampo(int matricula, String nombre, String apellido, int aniosExp, String zonaCobertura) {
+        super(matricula, nombre, apellido, aniosExp);
+        this.zonaCobertura = zonaCobertura;
+        this.Vehiculo = null; // le asignamos null para indicar que no se utiliza vehiculo.
     }
 
     @Override
@@ -25,7 +34,7 @@ public class InspectorDeCampo extends Inspector {
     public int calcularCostoIntervencion() {  // Punto 5 P3
         int costoBase = 100000 + (getAniosExp() * 15);
         if (this.Vehiculo != null) {
-            costoBase = costoBase + (int)(costoBase * 0.10); // aumento del 10% si se uso un vehiculo.
+            costoBase = (int) (costoBase * 1.10); // aumento del 10% si se uso un vehiculo.
         } 
         return (int) costoBase;
     }

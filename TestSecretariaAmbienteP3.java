@@ -32,7 +32,7 @@ public class TestSecretariaAmbienteP3 {
         // ACA EMPIEZA LA P3 
 
         // Punto 1 P3: Crear inspectores
-        InspectorDeCampo inspCampo = new InspectorDeCampo(001, "Lavezzo", "Lucas", 22, "Zona Norte", "Vehiculo Toyota Hilux SW4 Diamond 2026");  
+        InspectorDeCampo inspCampo = new InspectorDeCampo(001, "Lavezzo", "Lucas", 22, "Zona Norte", "Toyota Hilux SW4 Diamond 2026");  
         InspectorDeLaboratorio inspLaboratorio = new InspectorDeLaboratorio(002, "Santiago", "Sarabia", 6, "Calidad de Aire", "Sarabias SA Lab");  
         InspectorJuridico inspJuridico = new InspectorJuridico(003, "Rocca", "Francisco", 12, new String[] {"Ley 25.675", "Ordenanza OM4231", "Decreto 831/93"});  
 

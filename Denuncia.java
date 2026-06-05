@@ -31,9 +31,9 @@ public class Denuncia{
     public void registrarEvento(Evento evento){
         this.eventos.add(evento);
     }
-
-    public void setEstado(String estado){ 
-        this.estado = estado;
+    /// aca agregamos un setter para el estado, para que la secretaria pueda cambiarlo a medida que avanza el proceso de investigacion.
+    public void setEstado(String nuevoEstado){ 
+        this.estado = nuevoEstado;
     }
 
     public int getNumeroExpediente(){
@@ -56,7 +56,10 @@ public class Denuncia{
             d.sumarPuntos(10); 
         }
     }
-    // ///////////////////// NUEVO: Método para registrar evento con inspector
+
+
+
+    // ///////////////////// NUEVO: Metodo para registrar evento con inspector
     public void registrarEventoConInspector(String descripcion, Inspector inspector){
         Evento nuevoEvento = new Evento("04/06/2026", descripcion, inspector);
         this.eventos.add(nuevoEvento);
