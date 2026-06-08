@@ -28,4 +28,5 @@ public abstract class Inspector {
     // aca estan los metodos abstractos que van a ser implementador por las clases hijas.
     public abstract String generarInforme(Denuncia denuncia);
     public abstract int calcularCostoIntervencion();
+    public abstract String getTipoInspector(); // agrego este metodo abstracto para que cada tipo de inspector pueda devolver su tipo (campo, laboratorio o juridico).
 }

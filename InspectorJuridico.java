@@ -20,4 +20,9 @@ public class InspectorJuridico extends Inspector{
           ". Evaluacion legal de hechos denunciados en: " + denuncia.getUbicacion().getZona() +
            ". Dictamen en elaboracion.";
     }
+
+    @Override
+    public String getTipoInspector() {
+        return "Inspector Juridico";
+    }
 }

@@ -9,6 +9,7 @@ public abstract class Denunciante{
     private ArrayList<Denuncia> denunciasRealizadas;
     private ArrayList<Canje> historialCanjes;
 
+    
     public Denunciante(String nombre, String apellido, String dni, String email){
         this.nombre = nombre;
         this.apellido = apellido;
@@ -18,27 +19,27 @@ public abstract class Denunciante{
         this.historialCanjes = new ArrayList<>();
         this.denunciasRealizadas = new ArrayList<>();
     }
-
+    
     public void sumarPuntos(int puntos){
         this.puntajeTotal += puntos;
     }
-
+    
     public void agregarDenuncia(Denuncia d){
         this.denunciasRealizadas.add(d);
     }
-
+    
     public String getNombre(){
         return this.nombre;
     }
-
+    
     public int getPuntajeTotal(){
         return this.puntajeTotal;
     }
-
+    
     public ArrayList<Denuncia> getDenunciasRealizadas(){
         return this.denunciasRealizadas;
     }
-
+    
     public ArrayList<Canje> getHistorialCanjes(){
         return this.historialCanjes;
     }
@@ -56,4 +57,7 @@ public abstract class Denunciante{
             System.out.println("No tenes puntos suficientes");
         }
     }
+
+    // metodo abstracto apra denunciante
+    public abstract String getTipoDenunciante();
 }

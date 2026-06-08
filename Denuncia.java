@@ -11,13 +11,13 @@ public class Denuncia{
     private ArrayList<Evento> eventos;
     private ArrayList<Denunciante> denunciantes;
 
-    public Denuncia(int numeroExpediente, String descripcion, Ubicacion ubicacion, Categoria categoria){
+    public Denuncia(String estado, int numeroExpediente, String descripcion, Ubicacion ubicacion, Categoria categoria){
+        this.estado = estado;
         this.numeroExpediente = numeroExpediente;
         this.fechaIngreso = LocalDate.now();
         this.descripcion = descripcion;
         this.ubicacion = ubicacion;
         this.categoria = categoria;
-        this.estado = "RECIBIDA";
         this.eventos = new ArrayList<>();
         this.denunciantes = new ArrayList<>();
     }
@@ -30,10 +30,6 @@ public class Denuncia{
 
     public void registrarEvento(Evento evento){
         this.eventos.add(evento);
-    }
-    /// aca agregamos un setter para el estado, para que la secretaria pueda cambiarlo a medida que avanza el proceso de investigacion.
-    public void setEstado(String nuevoEstado){ 
-        this.estado = nuevoEstado;
     }
 
     public int getNumeroExpediente(){
@@ -48,18 +44,20 @@ public class Denuncia{
         return this.ubicacion;
     }
 
+    
+
     public void resolverFavorablemente() {
         this.estado = "CERRADA_ACEPTADA";
-        System.out.println("Denuncia resuelta favorablemente");
-        
+        int puntosExtra = this.categoria.getPuntosBase(); //////////estos son los puntos extras
         for (Denunciante d : denunciantes) {
-            d.sumarPuntos(10); 
+            d.sumarPuntos(puntosExtra);
         }
     }
 
+    public void setEstado(String estado){
+        this.estado = estado;
+    }
 
-
-    // ///////////////////// NUEVO: Metodo para registrar evento con inspector
     public void registrarEventoConInspector(String descripcion, Inspector inspector){
         Evento nuevoEvento = new Evento("04/06/2026", descripcion, inspector);
         this.eventos.add(nuevoEvento);

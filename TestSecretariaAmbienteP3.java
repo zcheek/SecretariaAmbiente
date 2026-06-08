@@ -17,11 +17,11 @@ public class TestSecretariaAmbienteP3 {
         Categoria catResiduos = new Categoria("Residuos Peligrosos", 25);
         Categoria catSonora = new Categoria("Contaminación Sonora", 10);
         
-        Denuncia denunciaUno = new Denuncia(00001, "Vuelco de efluentes extraños en la costa del río", ubi1, catAgua); 
-        Denuncia denunciaDos = new Denuncia(00002, "Columna de humo tóxico proveniente de un local", ubi2, catAtmosferica); 
-        Denuncia denunciaTres = new Denuncia(00003, "Abandono de bolsas con líquidos sospechosos", ubi3, catResiduos); 
-        Denuncia denunciaCuatro = new Denuncia(00004, "Acumulación de residuos no habituales con mal olor", ubi4, catResiduos); 
-        Denuncia denunciaCinco = new Denuncia(00005, "Ruidos molestos por vehículos modificados en la vía pública", ubi5, catSonora); 
+        Denuncia denunciaUno = new Denuncia("RECIBIDA", 00001, "Vuelco de efluentes extraños en la costa del río", ubi1, catAgua); 
+        Denuncia denunciaDos = new Denuncia("RECIBIDA", 00002, "Columna de humo tóxico proveniente de un local", ubi2, catAtmosferica); 
+        Denuncia denunciaTres = new Denuncia("RECIBIDA", 00003, "Abandono de bolsas con líquidos sospechosos", ubi3, catResiduos); 
+        Denuncia denunciaCuatro = new Denuncia("RECIBIDA", 00004, "Acumulación de residuos no habituales con mal olor", ubi4, catResiduos); 
+        Denuncia denunciaCinco = new Denuncia("RECIBIDA", 00005, "Ruidos molestos por vehículos modificados en la vía pública", ubi5, catSonora); 
 
         secramb.cargarDenuncia(denunciaUno);
         secramb.cargarDenuncia(denunciaDos);

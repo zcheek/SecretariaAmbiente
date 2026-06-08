@@ -38,4 +38,8 @@ public class InspectorDeCampo extends Inspector {
         } 
         return (int) costoBase;
     }
+    @Override
+    public String getTipoInspector() {
+        return "Inspector de Campo";
+    }
 }

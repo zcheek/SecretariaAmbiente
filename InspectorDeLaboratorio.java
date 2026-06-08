@@ -27,4 +27,9 @@ public class InspectorDeLaboratorio extends Inspector {
         return "Informe de laboratorio - Inspector:" + getNombre() + ". Laboratorio:" + getNombreLaboratorio()
          + ". Especialidad:" + getEspecialidad() + ". Análisis de muestras correspondientes a denuncia en:" + denuncia.getUbicacion() + ". Resultados pendientes de validacion.";
     }
+
+    @Override
+    public String getTipoInspector() {
+        return "Inspector de Laboratorio";
+    }
 }

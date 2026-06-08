@@ -53,15 +53,7 @@ public class SecretariaAmbiente{
 
     public void listarInspectoresYCostos(){
         for (Inspector inspector : inspectores){
-            // averiguo el tipo de inspector con instanceof
-            String tipo = "";
-            if (inspector instanceof InspectorDeCampo) {
-                tipo = "Inspector de Campo";
-            } else if (inspector instanceof InspectorDeLaboratorio) {
-                tipo = "Inspector de Laboratorio";
-            } else if (inspector instanceof InspectorJuridico) {
-                tipo = "Inspector Jurídico";
-            }
+            String tipo = inspector.getTipoInspector();
             System.out.println("Inspector: " + inspector.getNombre());
             System.out.println("Tipo: " + tipo);
             System.out.println("Costo de Intervencion: $" + inspector.calcularCostoIntervencion());
